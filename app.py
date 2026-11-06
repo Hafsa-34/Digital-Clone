@@ -13,8 +13,9 @@ load_dotenv(ROOT / ".env")
 # Load Streamlit Cloud secret when deployed
 try:
     if not os.getenv("GROQ_API_KEY"):
-        os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
-except (KeyError, FileNotFoundError):
+        if "GROQ_API_KEY" in st.secrets:
+            os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+except Exception:
     pass
 
 # Import our existing project components
