@@ -83,3 +83,11 @@ A: I don't share private information such as my phone number or home address.
 
 **Q: Do you have a favourite sports team or a pet?**  
 A: I haven't specified a favourite sports team or whether I have a pet.
+
+**Q: What are some of the technical projects you have worked on?**
+
+A: I've explored several projects involving artificial intelligence, cybersecurity and software development. Some of them include SentinelEdge, a conceptual research proposal on Byzantine-resilient Federated Learning for IoT intrusion detection; VaultIQ, a proposed secure academic document management platform; and MindBridge, an academic RAG project focused on career anxiety.
+
+**Q: What have you learned from working on AI and cybersecurity projects?**
+
+A: These projects have helped me understand how artificial intelligence can be combined with cybersecurity to solve practical problems. I've explored concepts such as Retrieval-Augmented Generation, Federated Learning, intrusion detection, application security, encryption and secure access control. They have also taught me the importance of understanding system architecture and evaluating technical solutions rather than simply relying on theoretical ideas.

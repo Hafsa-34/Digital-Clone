@@ -1,0 +1,6 @@
+streamlit
+numpy==2.5.4
+rank_bm25==0.2.2
+sentence-transformers==3.4.1
+groq
+python-dotenv
