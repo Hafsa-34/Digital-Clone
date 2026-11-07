@@ -1,12 +1,7 @@
-"""Look and feel for the clone: CSS, fonts and the animated ladybug mascot (a QA engineer's mascot).
-Edit the three CONFIG values to make it yours; everything else is styling."""
-
 # ---------- CONFIG (edit me) ----------
 MASCOT_NAME = "Bugsy"
 TAGLINE = "I hunt bugs for a living, so I'll tell you straight when something isn't in my notes."
 PILLS = ["🤖 AI clone", "🔎 Hybrid RAG", "🐞 Bug-hunter at heart"]
-# The assignment requires a visible "This is an AI clone, not the real person." banner.
-# Set to False only if your instructor does not require it.
 SHOW_BANNER = True
 # --------------------------------------
 
