@@ -1,6 +1,7 @@
 
 import json
 import os
+import re
 from pathlib import Path
 
 import streamlit as st
@@ -24,6 +25,14 @@ from src.dense_retriever import DenseRetriever
 from src.hybrid_retriever import HybridRetriever
 from src.generator import DigitalCloneGenerator
 
+# Visual theme (CSS, animated mascot, hero) lives in theme.py
+from theme import CSS, STREAMLIT_CSS, FOOTER, hero_html
+
+
+def _flat(html: str) -> str:
+    """Collapse whitespace so Streamlit's markdown parser keeps the HTML block intact."""
+    return re.sub(r">\s+<", "><", re.sub(r"\s*\n\s*", " ", html)).strip()
+
 
 # ---------- Page configuration ----------
 
@@ -33,11 +42,10 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🤖 Hafsa's Digital Clone")
+st.markdown(_flat(f"<style>{CSS}{STREAMLIT_CSS}</style>"), unsafe_allow_html=True)
 
-st.warning(
-    "⚠️ This is an AI clone, not the real person."
-)
+# Themed header: animated mascot + the required "AI clone" banner
+st.markdown(_flat(hero_html()), unsafe_allow_html=True)
 
 st.write(
     "Ask questions about Hafsa. "
@@ -159,7 +167,10 @@ if submitted:
                 )
 
             st.subheader("Generated Answer")
-            st.markdown(answer)
+            st.markdown(
+                f'<div class="bubble">\n\n{answer}\n\n</div>',
+                unsafe_allow_html=True
+            )
 
             st.divider()
 
@@ -224,3 +235,5 @@ st.caption(
     "Digital Clone | Hybrid Retrieval-Augmented Generation "
     "(BM25 + Dense + Reciprocal Rank Fusion)"
 )
+
+st.markdown(_flat(FOOTER), unsafe_allow_html=True)
